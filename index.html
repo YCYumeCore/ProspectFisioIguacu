@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Centro de Fisioterapia Iguaçu | Fisioterapia em Curitiba</title>
+<meta name="description" content="Centro de Fisioterapia Iguaçu em Curitiba. Fisioterapia traumato-ortopédica e desportiva, com atendimento personalizado para joelho, quadril, tornozelo, coluna e ombro." />
+<meta name="keywords" content="fisioterapia em Curitiba, fisioterapia São Braz Curitiba, fisioterapia traumato ortopédica Curitiba, fisioterapia desportiva Curitiba, fisioterapeuta Curitiba, tratamento de joelho Curitiba, fisioterapia para coluna Curitiba" />
+<meta property="og:title" content="Centro de Fisioterapia Iguaçu | Fisioterapia em Curitiba" />
+<meta property="og:description" content="Tratamento fisioterapêutico personalizado para você voltar a fazer o que ama com segurança, confiança e qualidade." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  window.tailwind = window.tailwind || {};
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          graphite: '#1B1B19',
+          ink: '#2A2A27',
+          stone: '#6E6C66',
+          line: '#E6E3DC',
+          paper: '#F5F3EF',
+          cream: '#FAF9F6',
+          brand: {
+            DEFAULT: '#BE1E2D',
+            dark: '#8F1521',
+            50: '#FBEAEB'
+          }
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root{
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif; color:#1B1B19; background:#FAF9F6; -webkit-font-smoothing:antialiased;}
+  .font-serif{font-family:'Fraunces',serif;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* Scroll reveal */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.08s;}
+  .reveal-delay-2{transition-delay:.16s;}
+  .reveal-delay-3{transition-delay:.24s;}
+  .reveal-delay-4{transition-delay:.32s;}
+
+  /* Header */
+  #site-header{transition:background-color .35s var(--ease), box-shadow .35s var(--ease), padding .35s var(--ease);}
+  #site-header.scrolled{box-shadow:0 1px 0 0 rgba(0,0,0,.06);}
+
+  .nav-link{position:relative; color:#1B1B19;}
+  .nav-link::after{content:'';position:absolute; left:0; bottom:-4px; width:0; height:1px; background:#BE1E2D; transition:width .3s var(--ease);}
+  .nav-link:hover::after{width:100%;}
+
+  .btn-primary{
+    background:#BE1E2D; color:#fff; border:1px solid #BE1E2D;
+    transition: background-color .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .btn-primary:hover{background:#8F1521; border-color:#8F1521; transform:translateY(-1px);}
+
+  .btn-outline{
+    background:transparent; color:#1B1B19; border:1px solid #1B1B19;
+    transition: background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+  }
+  .btn-outline:hover{background:#1B1B19; color:#fff; transform:translateY(-1px);}
+
+  .btn-outline-light{
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,.55);
+    transition: background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+  }
+  .btn-outline-light:hover{background:#fff; color:#1B1B19; border-color:#fff;}
+
+  /* Image hover */
+  .img-zoom{overflow:hidden;}
+  .img-zoom img{transition:transform .7s var(--ease); will-change:transform;}
+  .img-zoom:hover img{transform:scale(1.045);}
+
+  /* Specialty card underline link */
+  .link-underline{position:relative; display:inline-block;}
+  .link-underline::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(1);transform-origin:left;}
+  .link-underline:hover::after{transform:scaleX(0); transition:transform .3s var(--ease);}
+
+  /* Marquee trust bar */
+  .marquee-track{animation: marquee 28s linear infinite;}
+  .marquee-wrap:hover .marquee-track{animation-play-state:paused;}
+  @keyframes marquee{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  /* Process connector line */
+  .process-line{background:linear-gradient(to bottom, #E6E3DC 0%, #E6E3DC 100%);}
+
+  /* Testimonial carousel */
+  .testi-track{display:flex; transition:transform .6s var(--ease);}
+  .testi-slide{flex:0 0 100%;}
+  @media(min-width:768px){ .testi-slide{flex:0 0 50%;} }
+  @media(min-width:1100px){ .testi-slide{flex:0 0 33.3333%;} }
+
+  /* Instagram / gallery masonry */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 110px;
+    gap:10px;
+  }
+  .gallery-grid > a{grid-column:span 3; grid-row:span 2;}
+  .gallery-grid > a:nth-child(1){grid-column:span 4; grid-row:span 3;}
+  .gallery-grid > a:nth-child(2){grid-column:span 2; grid-row:span 2;}
+  .gallery-grid > a:nth-child(3){grid-column:span 2; grid-row:span 2;}
+  .gallery-grid > a:nth-child(4){grid-column:span 3; grid-row:span 2;}
+  .gallery-grid > a:nth-child(5){grid-column:span 3; grid-row:span 3;}
+  .gallery-grid > a:nth-child(6){grid-column:span 3; grid-row:span 2;}
+  @media(max-width:768px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .gallery-grid > a, .gallery-grid > a:nth-child(1), .gallery-grid > a:nth-child(2), .gallery-grid > a:nth-child(3), .gallery-grid > a:nth-child(4), .gallery-grid > a:nth-child(5), .gallery-grid > a:nth-child(6){
+      grid-column:span 1; grid-row:span 2;
+    }
+  }
+
+  /* Horizontal scroll snap for mobile cards */
+  .snap-row{display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
+  .snap-row::-webkit-scrollbar{display:none;}
+  .snap-item{scroll-snap-align:start; flex:0 0 82%;}
+  @media(min-width:768px){
+    .snap-row{overflow:visible; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;}
+    .snap-item{flex:auto;}
+  }
+  @media(min-width:1100px){
+    .snap-row{grid-template-columns:repeat(6,1fr);}
+  }
+
+  /* WhatsApp float */
+  #wa-float{transition:transform .3s var(--ease);}
+  #wa-float:hover{transform:translateY(-3px);}
+  #wa-tooltip{opacity:0; transform:translateX(6px); transition:opacity .25s var(--ease), transform .25s var(--ease); pointer-events:none;}
+  #wa-float:hover #wa-tooltip{opacity:1; transform:translateX(0);}
+
+  /* Lightbox */
+  #lightbox{transition:opacity .3s var(--ease);}
+  #lightbox img{transition:transform .3s var(--ease);}
+
+  .focus-ring:focus-visible{outline:2px solid #BE1E2D; outline-offset:3px;}
+
+  ::selection{background:#BE1E2D; color:#fff;}
+</style>
+</head>
+<body class="bg-cream text-graphite">
+
+<!-- ============ SEO: dados estruturados ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Centro de Fisioterapia Iguaçu",
+  "image": "https://instagram.fbfh3-2.fna.fbcdn.net/v/t51.2885-19/505725040_18054157769459205_5644451820841519720_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42MTUuYzIifQ&_nc_ht=instagram.fbfh3-2.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2gGgsFVLPVMa-f_q38BVz_7DnJSbXWqx4nbBXaXydRRdfmSOaacbw1NFDhLwirWdthL5AoWyiEJ_G9NohL_SnzvO&_nc_ohc=JoyK1NZCS6sQ7kNvwFpkhIu&_nc_gid=0qPB0ofM6Pbo5H4F145gdg&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AQIRjYr9zC9MA_S8zU0_sHtOH9CxACFaEdON2aLvLBtAwQ&oe=6AA655AE&_nc_sid=22de04",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Ver. Toaldo Túlio, 2354, Lj 04, São Braz",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "postalCode": "82320-010",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55 41 3044-7296",
+  "medicalSpecialty": "Physiotherapy",
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"}
+  ]
+}
+</script>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
+    <a href="#inicio" class="flex items-center gap-3 focus-ring" aria-label="Centro de Fisioterapia Iguaçu — início">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY8rtyFRW15cG_oVEJr-XScJAzzbwyBN7hWySI-GnBPDo7CsYW0mhQpVZk&s=10"
+           alt="Logo Centro de Fisioterapia Iguaçu" class="h-11 w-auto" />
+      <span class="hidden sm:block font-serif text-[15px] leading-tight text-graphite">
+        Centro de Fisioterapia<br/><span class="text-stone text-xs tracking-wide">IGUAÇU</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9 text-[14.5px] font-medium">
+      <a href="#inicio" class="nav-link focus-ring">Início</a>
+      <a href="#clinica" class="nav-link focus-ring">A Clínica</a>
+      <a href="#especialidades" class="nav-link focus-ring">Especialidades</a>
+      <a href="#equipe" class="nav-link focus-ring">Equipe</a>
+      <a href="#depoimentos" class="nav-link focus-ring">Depoimentos</a>
+      <a href="#contato" class="nav-link focus-ring">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#contato" class="hidden md:inline-flex btn-primary rounded-full px-6 py-2.5 text-[13.5px] font-semibold tracking-wide focus-ring">
+        AGENDAR AVALIAÇÃO
+      </a>
+      <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" class="lg:hidden p-2 focus-ring">
+        <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-cream border-t border-line">
+    <nav class="flex flex-col px-6 py-6 gap-5 text-[16px] font-medium">
+      <a href="#inicio" class="mobile-link">Início</a>
+      <a href="#clinica" class="mobile-link">A Clínica</a>
+      <a href="#especialidades" class="mobile-link">Especialidades</a>
+      <a href="#equipe" class="mobile-link">Equipe</a>
+      <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+      <a href="#contato" class="btn-primary rounded-full px-6 py-3 text-center text-[13.5px] font-semibold tracking-wide mt-2">AGENDAR AVALIAÇÃO</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="inicio" class="relative pt-32 md:pt-40 pb-16 md:pb-0 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+    <div class="reveal is-visible order-2 lg:order-1">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-5">CENTRO DE FISIOTERAPIA IGUAÇU</p>
+      <h1 class="font-serif text-[2.6rem] leading-[1.08] sm:text-[3.3rem] sm:leading-[1.06] lg:text-[3.6rem] text-graphite mb-6">
+        Recupere seu<br/>movimento.<br/>Retome sua vida.
+      </h1>
+      <p class="text-stone text-[17px] leading-relaxed max-w-md mb-9">
+        Tratamento fisioterapêutico personalizado para você voltar a fazer o que ama com segurança, confiança e qualidade.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contato" class="btn-primary rounded-full px-8 py-4 text-[13.5px] font-semibold tracking-wide focus-ring">AGENDAR AVALIAÇÃO</a>
+        <a href="#clinica" class="btn-outline rounded-full px-8 py-4 text-[13.5px] font-semibold tracking-wide focus-ring">CONHEÇA A CLÍNICA</a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="mt-14 flex flex-wrap gap-x-10 gap-y-5 border-t border-line pt-8">
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-2xl text-graphite">4,6</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <p class="text-stone text-[13px] mt-1">no Google</p>
+        </div>
+        <div>
+          <span class="font-serif text-2xl text-graphite">+1.100</span>
+          <p class="text-stone text-[13px] mt-1">avaliações</p>
+        </div>
+        <div>
+          <span class="font-serif text-2xl text-graphite">100%</span>
+          <p class="text-stone text-[13px] mt-1">atendimento personalizado</p>
+        </div>
+        <div>
+          <span class="font-serif text-2xl text-graphite">Especializada</span>
+          <p class="text-stone text-[13px] mt-1">equipe qualificada</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2 relative">
+      <div class="relative rounded-[2rem] overflow-hidden img-zoom aspect-[4/5] lg:aspect-[3/4]">
+        <img src="57f94d18-fcc8-4fd2-a6e1-1ea236b1efc9.png"
+             alt="Fisioterapeuta atendendo paciente durante sessão de reabilitação"
+             class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <!-- floating chip -->
+      <div class="hidden sm:flex absolute -left-6 bottom-10 bg-white rounded-2xl shadow-[0_16px_40px_-12px_rgba(0,0,0,.18)] px-5 py-4 items-center gap-3 reveal reveal-delay-2 is-visible">
+        <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div>
+          <p class="text-[13px] font-semibold leading-none">Avaliação completa</p>
+          <p class="text-stone text-[12px] mt-1">Diagnóstico funcional individual</p>
+        </div>
+      </div>
+      <div class="hidden sm:block absolute -right-5 top-8 bg-graphite text-white rounded-2xl px-5 py-4 reveal reveal-delay-3 is-visible">
+        <p class="text-[12px] tracking-wide text-white/70">MOVIMENTO PARA</p>
+        <p class="font-serif text-[15px]">uma vida melhor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="border-y border-line bg-white py-6 overflow-hidden">
+  <div class="marquee-wrap">
+    <div class="marquee-track flex gap-16 w-max">
+      <ul class="flex gap-16 items-center text-[13.5px] font-medium text-stone tracking-wide">
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M12 3v18M3 12h18"/></svg>Fisioterapia especializada</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Atendimento personalizado</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/></svg>Tecnologia e métodos avançados</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg>Experiência profissional</li>
+      </ul>
+      <ul class="flex gap-16 items-center text-[13.5px] font-medium text-stone tracking-wide" aria-hidden="true">
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M12 3v18M3 12h18"/></svg>Fisioterapia especializada</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Atendimento personalizado</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/></svg>Tecnologia e métodos avançados</li>
+        <li class="flex items-center gap-2 whitespace-nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg>Experiência profissional</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUA RECUPERAÇÃO COMEÇA AQUI ============ -->
+<section class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="reveal">
+      <div class="rounded-[2rem] overflow-hidden img-zoom aspect-[4/5]">
+        <img src="imagem feliz.png"
+             alt="Profissional do Centro de Fisioterapia Iguaçu avaliando paciente"
+             class="w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.5rem] leading-[1.15] text-graphite mb-6">
+        Seu corpo merece um tratamento pensado para você.
+      </h2>
+      <p class="text-stone text-[16.5px] leading-relaxed mb-6">
+        No Centro de Fisioterapia Iguaçu, cada paciente recebe um atendimento particular e personalizado. Nossa equipe trabalha com foco na recuperação segura e eficaz, respeitando as necessidades, limitações e objetivos de cada pessoa.
+      </p>
+      <div class="border-l-2 border-brand pl-6 py-1">
+        <p class="font-serif text-lg text-graphite mb-1">Atendimento individualizado</p>
+        <p class="text-stone text-[15px] leading-relaxed">Cada plano de tratamento é construído a partir da sua avaliação, do seu histórico e dos seus objetivos — não de um protocolo padrão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESPECIALIDADES ============ -->
+<section id="especialidades" class="py-24 md:py-32 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">ESPECIALIDADES</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite">
+        Especialistas em devolver movimento.
+      </h2>
+    </div>
+
+    <div class="snap-row pb-2">
+      <!-- Card template x6 -->
+      <article class="snap-item reveal">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop" alt="Tratamento fisioterapêutico de joelho" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Joelho</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Avaliação e tratamento de lesões e condições relacionadas ao joelho.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+
+      <article class="snap-item reveal reveal-delay-1">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://st.depositphotos.com/1053932/2241/i/450/depositphotos_22417817-stock-photo-hip-mobilization-therapy-by-physiotherapist.jpg" alt="Tratamento fisioterapêutico de quadril" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Quadril</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Reabilitação e recuperação funcional do quadril.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+
+      <article class="snap-item reveal reveal-delay-2">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://st2.depositphotos.com/1758925/5443/i/450/depositphotos_54438461-stock-photo-doctor-orthopedist-making-shock-wave.jpg" alt="Tratamento fisioterapêutico de tornozelo" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Tornozelo</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Tratamento e recuperação de lesões e alterações do tornozelo.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+
+      <article class="snap-item reveal">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=900&auto=format&fit=crop" alt="Tratamento fisioterapêutico de coluna" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Coluna</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Tratamento fisioterapêutico para diferentes condições da coluna.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+
+      <article class="snap-item reveal reveal-delay-1">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://st2.depositphotos.com/2309453/9208/i/450/depositphotos_92086192-stock-photo-physical-therapist-examines-the-shoulder.jpg" alt="Tratamento fisioterapêutico de ombro" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Ombro</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Reabilitação e recuperação da mobilidade e função do ombro.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+
+      <article class="snap-item reveal reveal-delay-2">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[4/5] mb-5">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=900&auto=format&fit=crop" alt="Fisioterapia desportiva" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-xl text-graphite mb-2">Fisioterapia desportiva</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed mb-3">Preparação, recuperação e retorno seguro às atividades esportivas.</p>
+        <a href="#contato" class="link-underline text-[13.5px] font-semibold text-graphite">Saiba mais</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAIS ============ -->
+<section class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">DIFERENCIAIS</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite">
+        Por que escolher a Fisioterapia Iguaçu?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
+      <div class="reveal">
+        <span class="font-serif text-3xl text-brand">01</span>
+        <h3 class="font-serif text-lg text-graphite mt-4 mb-2">Atendimento personalizado</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed">Cada tratamento é pensado de acordo com as necessidades individuais do paciente.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="font-serif text-3xl text-brand">02</span>
+        <h3 class="font-serif text-lg text-graphite mt-4 mb-2">Profissionais especializados</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed">Equipe qualificada e experiente.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="font-serif text-3xl text-brand">03</span>
+        <h3 class="font-serif text-lg text-graphite mt-4 mb-2">Tecnologia</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed">Recursos e métodos modernos para potencializar a recuperação.</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <span class="font-serif text-3xl text-brand">04</span>
+        <h3 class="font-serif text-lg text-graphite mt-4 mb-2">Tratamento baseado em avaliação</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed">O tratamento começa entendendo o seu corpo, sua condição e seus objetivos.</p>
+      </div>
+      <div class="reveal reveal-delay-4">
+        <span class="font-serif text-3xl text-brand">05</span>
+        <h3 class="font-serif text-lg text-graphite mt-4 mb-2">Foco em resultados</h3>
+        <p class="text-stone text-[14.5px] leading-relaxed">Recuperação segura, progressiva e eficaz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="py-24 md:py-32 bg-graphite text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">COMO FUNCIONA</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12]">
+        Sua jornada de recuperação, em quatro etapas.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-10 md:gap-6 relative">
+      <div class="hidden md:block absolute top-6 left-0 right-0 h-px bg-white/15"></div>
+
+      <div class="reveal relative">
+        <div class="w-12 h-12 rounded-full bg-brand flex items-center justify-center font-serif text-lg mb-6 relative z-10">01</div>
+        <h3 class="font-serif text-xl mb-2">Avaliação</h3>
+        <p class="text-white/60 text-[14.5px] leading-relaxed">Entendemos sua condição, limitações e objetivos.</p>
+      </div>
+      <div class="reveal reveal-delay-1 relative">
+        <div class="w-12 h-12 rounded-full bg-brand flex items-center justify-center font-serif text-lg mb-6 relative z-10">02</div>
+        <h3 class="font-serif text-xl mb-2">Planejamento</h3>
+        <p class="text-white/60 text-[14.5px] leading-relaxed">Definimos uma estratégia de tratamento personalizada.</p>
+      </div>
+      <div class="reveal reveal-delay-2 relative">
+        <div class="w-12 h-12 rounded-full bg-brand flex items-center justify-center font-serif text-lg mb-6 relative z-10">03</div>
+        <h3 class="font-serif text-xl mb-2">Tratamento</h3>
+        <p class="text-white/60 text-[14.5px] leading-relaxed">Aplicamos técnicas e recursos adequados para sua recuperação.</p>
+      </div>
+      <div class="reveal reveal-delay-3 relative">
+        <div class="w-12 h-12 rounded-full bg-brand flex items-center justify-center font-serif text-lg mb-6 relative z-10">04</div>
+        <h3 class="font-serif text-xl mb-2">Evolução</h3>
+        <p class="text-white/60 text-[14.5px] leading-relaxed">Acompanhamos sua evolução para você retomar seus movimentos com segurança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section id="depoimentos" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap justify-between items-end gap-6 mb-14 reveal">
+      <div class="max-w-xl">
+        <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">DEPOIMENTOS</p>
+        <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite">
+          Histórias de quem voltou a se movimentar.
+        </h2>
+      </div>
+      <div class="flex gap-3">
+        <button id="testi-prev" aria-label="Depoimento anterior" class="w-11 h-11 rounded-full border border-line flex items-center justify-center hover:bg-graphite hover:text-white hover:border-graphite transition-colors focus-ring">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="testi-next" aria-label="Próximo depoimento" class="w-11 h-11 rounded-full border border-line flex items-center justify-center hover:bg-graphite hover:text-white hover:border-graphite transition-colors focus-ring">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="overflow-hidden reveal">
+      <div id="testi-track" class="testi-track">
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Já fiz fisioterapia duas vezes nesta clínica. O atendimento é impecável, é maravilhoso. Muito humano e acolhedor. Nas duas vezes tive ótimos resultados. Parabéns a toda equipe e gratidão pelo carinho de sempre."</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Liliana Siracusa Bueno</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Avaliação no Google · 11 meses atrás</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Recomendo fortemente esta clínica! Minha experiência foi extremamente positiva, desde o atendimento inicial até o acompanhamento final. A equipe é atenciosa, profissional e demonstra muito cuidado com cada paciente. O ambiente é acolhedor, bem estruturado e transmite muita confiança."</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Robson Felipe Souza</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Avaliação no Google · 1 ano atrás</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Lá no Centro de Fisioterapia Iguaçu a equipe é maravilhosa! Começa na recepção, fui super bem atendida. Os profissionais super competentes, gentis e atenciosos. Fui atendida no que precisei e terminei meu tratamento ótima. Super recomendo."</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Lindamil Ingleis</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Local Guide · Avaliação no Google · 1 ano atrás</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Atendimento incrível! Tratei duas lesões por lá e só tenho elogios! A equipe é super atenciosa e profissional. O ambiente é ótimo, bem cuidado, e os resultados do tratamento foram rápidos. Super recomendo!"</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Andrei Balbo</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Avaliação no Google · 1 ano atrás</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Ótimo atendimento, excelentes profissionais com grande experiência. Fiz uma importante reabilitação pós-cirúrgica do meu joelho e obtive muita ajuda, fui muito bem tratado e consegui grandes resultados. Sou super grato, super recomendo."</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Felipe Serafim</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Avaliação no Google · 1 ano atrás</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-slide px-0 md:px-3">
+          <div class="bg-white border border-line rounded-2xl p-8 h-full flex flex-col">
+            <div class="flex gap-1 mb-5"><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="#BE1E2D"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+            <p class="font-serif text-lg text-graphite leading-relaxed mb-6 flex-1">"Muito bom atendimento. Todos os profissionais atenciosos."</p>
+            <div>
+              <p class="text-[13.5px] font-semibold text-graphite">Katriny Neumann</p>
+              <p class="text-stone text-[12.5px] mt-0.5">Avaliação no Google · 2 meses atrás</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-stone text-[12.5px] mt-6">* Avaliações reais de pacientes publicadas no Google.</p>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM / GALERIA ============ -->
+<section class="py-24 md:py-32 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap justify-between items-end gap-6 mb-14 reveal">
+      <div class="max-w-xl">
+        <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">@fisioterapiaiguacu</p>
+        <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite">Fisioterapia na prática.</h2>
+        <p class="text-stone text-[15.5px] mt-4">Acompanhe nosso trabalho, nossa equipe e histórias de recuperação.</p>
+      </div>
+      <a href="#" target="_blank" rel="noopener" class="btn-outline rounded-full px-7 py-3.5 text-[13px] font-semibold tracking-wide whitespace-nowrap focus-ring">VER MAIS NO INSTAGRAM</a>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <a href="instaclinic1.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic1.png" alt="Exercício de reabilitação assistido" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+      <a href="instaclinic5.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic5.png" alt="Avaliação fisioterapêutica" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+      <a href="instaclinic2.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic2.png" alt="Equipe do centro de fisioterapia" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+      <a href="instaclinic3.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic3.png" alt="Fisioterapia desportiva em atendimento" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+      <a href="instaclinic4.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic4.png" alt="Sessão de fisioterapia individual" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+      <a href="instaclinic1.png" class="lightbox-trigger img-zoom rounded-2xl overflow-hidden block relative group">
+        <img src="instaclinic1.png" alt="Bastidores da clínica" class="w-full h-full object-cover" loading="lazy" />
+      </a>
+    </div>
+    <p class="text-stone text-[12.5px] mt-6"></p>
+  </div>
+</section>
+
+<!-- ============ EQUIPE ============ -->
+<section id="equipe" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">EQUIPE</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite">
+        Profissionais que cuidam do seu movimento.
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <article class="reveal">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[3/4] mb-5 bg-paper flex items-center justify-center">
+          <img src="INTEGRANTES..png" alt="Nossa Equipe" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-lg text-graphite"></h3>
+        <p class="text-brand text-[13px] font-semibold mt-1 mb-2"></p>
+        <p class="text-stone text-[14px] leading-relaxed"></p>
+      </article>
+      <article class="reveal reveal-delay-1">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[3/4] mb-5 bg-paper flex items-center justify-center">
+          <img src="EQUIPE.png" alt="Fisioterapeuta da equipe — foto e nome a confirmar" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-lg text-graphite"></h3>
+        <p class="text-brand text-[13px] font-semibold mt-1 mb-2"></p>
+        <p class="text-stone text-[14px] leading-relaxed"></p>
+      </article>
+      <article class="reveal reveal-delay-2">
+        <div class="rounded-2xl overflow-hidden img-zoom aspect-[3/4] mb-5 bg-paper flex items-center justify-center">
+          <img src="integrantes.png" alt="Fisioterapeuta da equipe — foto e nome a confirmar" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <h3 class="font-serif text-lg text-graphite"></h3>
+        <p class="text-brand text-[13px] font-semibold mt-1 mb-2"></p>
+        <p class="text-stone text-[14px] leading-relaxed"></p>
+      </article>
+    </div>
+    <p class="text-stone text-[12.5px] mt-8"></p>
+  </div>
+</section>
+
+<!-- ============ SOBRE A CLÍNICA ============ -->
+<section id="clinica" class="py-24 md:py-32 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">A CLÍNICA</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.5rem] leading-[1.15] text-graphite mb-6">
+        Experiência, cuidado e conhecimento em cada atendimento.
+      </h2>
+      <p class="text-stone text-[16.5px] leading-relaxed mb-8">
+        No Centro de Fisioterapia Iguaçu, oferecemos atendimento particular e personalizado, com foco nas articulações de joelho, quadril, tornozelo, coluna e ombro. Nossa equipe possui experiência em fisioterapia traumato-ortopédica e desportiva, buscando oferecer tratamentos específicos para diferentes necessidades.
+      </p>
+      <a href="#contato" class="btn-outline rounded-full px-8 py-4 text-[13.5px] font-semibold tracking-wide inline-block focus-ring">CONHEÇA A FISIOTERAPIA IGUAÇU</a>
+    </div>
+    <div class="reveal reveal-delay-1 order-1 lg:order-2">
+      <div class="rounded-[2rem] overflow-hidden img-zoom aspect-[4/5]">
+        <img src="imagem clinica.jpg" alt="Recepção e ambiente do Centro de Fisioterapia Iguaçu" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA PRINCIPAL ============ -->
+<section class="relative py-28 md:py-36">
+  <div class="absolute inset-0">
+    <img src="full-shot-man-skateboard.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
+    <div class="absolute inset-0 bg-graphite/75"></div>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-5 md:px-8 text-center reveal">
+    <h2 class="font-serif text-[2.2rem] sm:text-[2.8rem] leading-[1.15] text-white mb-6">
+      Está na hora de voltar a se movimentar?
+    </h2>
+    <p class="text-white/75 text-[17px] leading-relaxed mb-10 max-w-xl mx-auto">
+      Agende sua avaliação e dê o primeiro passo para uma recuperação mais segura e personalizada.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#contato" class="btn-primary rounded-full px-9 py-4 text-[13.5px] font-semibold tracking-wide focus-ring">AGENDAR AVALIAÇÃO</a>
+      <a id="cta-whatsapp" href="https://wa.me/554130447296" target="_blank" rel="noopener" class="btn-outline-light rounded-full px-9 py-4 text-[13.5px] font-semibold tracking-wide focus-ring">FALAR COM A CLÍNICA</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCALIZAÇÃO ============ -->
+<section id="contato" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <p class="text-brand text-[13px] font-semibold tracking-[0.18em] mb-4">LOCALIZAÇÃO</p>
+      <h2 class="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.12] text-graphite mb-8">Estamos em Curitiba.</h2>
+
+      <div class="space-y-6 mb-10">
+        <div class="flex gap-4">
+          <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div>
+            <p class="font-semibold text-graphite">Centro de Fisioterapia Iguaçu</p>
+            <p class="text-stone text-[15px] leading-relaxed">Av. Ver. Toaldo Túlio, 2354 — Lj 04, São Braz<br/>Curitiba — PR, CEP 82320-010</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <p class="font-semibold text-graphite">Telefone</p>
+            <a href="tel:+554130447296" class="text-stone text-[15px] hover:text-brand transition-colors">(41) 3044-7296</a>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#BE1E2D" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div class="w-full">
+            <p class="font-semibold text-graphite mb-2">Horário de atendimento</p>
+            <ul class="text-stone text-[14.5px] leading-loose">
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Segunda-feira</span><span>07h–12h · 13h–20h</span></li>
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Terça-feira</span><span>07h–12h · 13h–20h</span></li>
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Quarta-feira</span><span>07h–12h · 13h–20h</span></li>
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Quinta-feira</span><span>07h–12h · 13h–20h</span></li>
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Sexta-feira</span><span>07h–12h · 13h–20h</span></li>
+              <li class="flex justify-between max-w-xs border-b border-line/70 py-1"><span>Sábado</span><span>Fechado</span></li>
+              <li class="flex justify-between max-w-xs py-1"><span>Domingo</span><span>Fechado</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Ver.+Toaldo+T%C3%BAlio%2C+2354%2C+Curitiba+-+PR" target="_blank" rel="noopener" class="btn-primary rounded-full px-6 py-3.5 text-[13px] font-semibold tracking-wide focus-ring">COMO CHEGAR</a>
+        <a href="tel:+554130447296" class="btn-outline rounded-full px-6 py-3.5 text-[13px] font-semibold tracking-wide focus-ring">LIGAR</a>
+        <a href="https://wa.me/554130447296" target="_blank" rel="noopener" class="btn-outline rounded-full px-6 py-3.5 text-[13px] font-semibold tracking-wide focus-ring">WHATSAPP</a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-square border border-line">
+        <iframe
+          title="Mapa — Centro de Fisioterapia Iguaçu"
+          src="https://www.google.com/maps?q=Av.+Ver.+Toaldo+T%C3%BAlio,+2354,+Curitiba+-+PR,+82320-010&output=embed"
+          class="w-full h-full" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-graphite text-white pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-3 mb-5">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWme_D10Sry7a376HYpSJraRKcG1zrzzwAQQ20yLsWtuI170_xkdbztEl_fHa3bgn3c3YI1w9go1oWacuNQvuv1KkrHayUYJJj36Dp_R6iS1qjOoSf25aY8QDFWXsyqz7MZ94Olgtfylg6Ix=w141-h118-n-k-no-nu" alt="Logo Centro de Fisioterapia Iguaçu" class="h-10 w-auto rounded bg-white p-1" />
+          <span class="font-serif text-[15px]">Centro de Fisioterapia<br/>Iguaçu</span>
+        </div>
+        <p class="text-white/60 text-[14px] font-serif italic">"Movimento para uma vida melhor."</p>
+      </div>
+
+      <div>
+        <p class="text-[13px] font-semibold tracking-wide text-white/50 mb-5">NAVEGAÇÃO</p>
+        <ul class="space-y-3 text-[14.5px] text-white/80">
+          <li><a href="#inicio" class="hover:text-brand transition-colors">Início</a></li>
+          <li><a href="#clinica" class="hover:text-brand transition-colors">A Clínica</a></li>
+          <li><a href="#especialidades" class="hover:text-brand transition-colors">Especialidades</a></li>
+          <li><a href="#equipe" class="hover:text-brand transition-colors">Equipe</a></li>
+          <li><a href="#depoimentos" class="hover:text-brand transition-colors">Depoimentos</a></li>
+          <li><a href="#" class="hover:text-brand transition-colors">Instagram</a></li>
+          <li><a href="#contato" class="hover:text-brand transition-colors">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[13px] font-semibold tracking-wide text-white/50 mb-5">CONTATO</p>
+        <ul class="space-y-3 text-[14.5px] text-white/80">
+          <li><a href="tel:+554130447296" class="hover:text-brand transition-colors">(41) 3044-7296</a></li>
+          <li class="max-w-[220px] leading-relaxed">Av. Ver. Toaldo Túlio, 2354 — São Braz — Curitiba/PR</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[13px] font-semibold tracking-wide text-white/50 mb-5">REDES SOCIAIS</p>
+        <ul class="space-y-3 text-[14.5px] text-white/80">
+          <li><a href="#" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener" class="hover:text-brand transition-colors">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-white/40 text-[13px] pt-8 text-center">© 2026 Centro de Fisioterapia Iguaçu. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
+<a id="wa-float" href="https://wa.me/554130447296" target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-[0_10px_30px_-8px_rgba(0,0,0,.4)] flex items-center justify-center focus-ring"
+   aria-label="Falar no WhatsApp">
+  <span id="wa-tooltip" class="absolute right-16 bg-graphite text-white text-[13px] px-3 py-1.5 rounded-lg whitespace-nowrap">Fale conosco</span>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.5 7.8 9.3 7.3c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1.1 2.6c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+</a>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-6 opacity-0">
+  <button id="lightbox-close" aria-label="Fechar" class="absolute top-6 right-6 text-white/80 hover:text-white focus-ring">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[92vw] rounded-lg object-contain" />
+</div>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }, {passive:true});
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  revealEls.forEach(el => io.observe(el));
+
+  // Testimonial carousel
+  const track = document.getElementById('testi-track');
+  const slides = track.children.length;
+  let idx = 0;
+  function getPerView(){
+    if (window.innerWidth >= 1100) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  function updateTrack(){
+    const perView = getPerView();
+    const max = Math.max(0, slides - perView);
+    idx = Math.min(idx, max);
+    const pct = (100 / perView) * idx;
+    track.style.transform = `translateX(-${pct}%)`;
+  }
+  document.getElementById('testi-next').addEventListener('click', () => {
+    const perView = getPerView();
+    const max = Math.max(0, slides - perView);
+    idx = idx >= max ? 0 : idx + 1;
+    updateTrack();
+  });
+  document.getElementById('testi-prev').addEventListener('click', () => {
+    const perView = getPerView();
+    const max = Math.max(0, slides - perView);
+    idx = idx <= 0 ? max : idx - 1;
+    updateTrack();
+  });
+  window.addEventListener('resize', updateTrack);
+  updateTrack();
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.lightbox-trigger').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      lightboxImg.src = el.getAttribute('href');
+      lightboxImg.alt = el.querySelector('img').alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      requestAnimationFrame(() => lightbox.classList.remove('opacity-0'));
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox(){
+    lightbox.classList.add('opacity-0');
+    document.body.style.overflow = '';
+    setTimeout(() => { lightbox.classList.add('hidden'); lightbox.classList.remove('flex'); }, 250);
+  }
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
